@@ -18,11 +18,10 @@ let car = {
 
 let {brand:marca, make:modelo, owners:{first = "desconhecido"}, owners:{second:segundoDono}, yearsOld:idade} = car;
 
-//here we bind the variable to the object, so that we can call the variable(function reference) from the outside the object.
+//here we bind the variable to the object, so that "this" is still working when we call the variable(function reference) from the outside the object/or without referencing the object.
 idade = idade.bind(car);
 
 console.log(`O segundo dono do ${marca} ${modelo} foi o ${segundoDono}, já o primeiro é ${first}. O carro tem ${idade()} anos de idade`);
-
 
 
 
